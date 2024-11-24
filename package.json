@@ -1,0 +1,57 @@
+{
+  "name": "@carry0987/state-manager",
+  "version": "1.0.0",
+  "description": "A lightweight and versatile state management solution for maintaining and transitioning application state with type-safe reducers and event-driven listener subscriptions.",
+  "type": "module",
+  "main": "dist/stateManager.min.js",
+  "module": "dist/stateManager.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "umd": "./dist/stateManager.min.js",
+      "import": "./dist/stateManager.esm.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build:js": "rollup --config rollup.config.ts --configPlugin typescript --environment BUILD:js",
+    "build:dts": "rollup --config rollup.config.ts --configPlugin typescript --environment BUILD:dts",
+    "build": "npm run build:js && npm run build:dts",
+    "lint": "prettier --write \"src/**/*.{ts,tsx,scss}\" \"test/**/*.{ts,tsx}\""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carry0987/StateManager-JS.git"
+  },
+  "keywords": [
+    "StateManager",
+    "state-management"
+  ],
+  "author": "carry0987",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carry0987/StateManager-JS/issues"
+  },
+  "homepage": "https://github.com/carry0987/StateManager-JS#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-replace": "^6.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@types/node": "^22.9.3",
+    "prettier": "^3.3.3",
+    "rollup": "^4.27.4",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-tsconfig-paths": "^1.5.2",
+    "tslib": "^2.8.1",
+    "vitest": "^2.1.5"
+  }
+}
